@@ -22,21 +22,21 @@ This framework tests real-world noise mitigation strategies applied to spectrogr
 
 ---
 
-## File Structure & Architecture
+## File Structure & Architecture: Cut and paste in place of default PyPret Files to gain Masking Capability
 
-### 1. `test_single_retrieval.py` (The Diagnostic Viewer)
+### 1. `test_single_retrieval.py` 
 Use this script for visual debugging and sanity checks. 
 * Pulls a single pulse from the `pulse_bank.hdf5`.
 * Runs a side-by-side comparison of a standard noisy retrieval vs. a mitigated/masked retrieval.
 * Generates detailed comparative plots highlighting the exact regions where phase error is calculated.
 
-### 2. `mask_error_calculation.py` (The Batch Simulator)
+### 2. `mask_error_calculation.py`
 The main script for sweeping parameters.
 * Iterates through a defined suite of pulses, measurement schemes, mask sizes, and processing toggles.
 * Executes the phase retrieval for every combination and calculates the custom MAE metrics.
 * Compiles the massive output dataset into `full_bank_retrieval_results.csv`.
 
-### 3. `mask_error_extraction.py` (The Analytics Pivoter)
+### 3. `mask_error_extraction.py`
 A lightweight post-processing script.
 * Reads the generated `full_bank_retrieval_results.csv` without rerunning simulations.
 * Pivots and aggregates the data to output a clean, ranked terminal summary showing which noise-mitigation configuration performed best for each scheme.
@@ -47,7 +47,7 @@ Acts as the intermediate wrapper between the simulated physics and the algorithm
 * Applies the user-defined background subtractions and dynamic boundaries.
 * Constructs the 2D boolean weight arrays (`weights_masked`) that dictate how the retriever handles the data.
 
-### 5. `retriever.py` (The Core Algorithm Logic)
+### 5. `retriever.py`
 A customized override of PyPret’s `BaseRetriever`.
 * **Important Modification:** This file has been altered to natively accept and process 2D `weights` arrays during the iterative minimization loops (e.g., `_error_vector`, `_objective_function`). 
 
