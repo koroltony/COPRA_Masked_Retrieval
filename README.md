@@ -1,4 +1,4 @@
-# Ultrashort Pulse Phase Retrieval: COPRA Masked Evaluation Testbench
+# Ultrashort Pulse Retrieval: COPRA Masked Evaluation Testbench
 
 This repository contains a customized simulation suite for ultrashort pulse phase retrieval. Built on top of the open-source **`pypret` (Python Phase Retrieval for Ultrashort Pulses)** library, this project is designed to evaluate the robustness of iterative phase retrieval algorithms (like COPRA) against additive noise. 
 
