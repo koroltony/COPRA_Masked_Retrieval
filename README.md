@@ -41,7 +41,7 @@ A lightweight post-processing script.
 * Reads the generated `full_bank_retrieval_results.csv` without rerunning simulations.
 * Pivots and aggregates the data to output a clean, ranked terminal summary showing which noise-mitigation configuration performed best for each scheme.
 
-### 4. `benchmarking.py` (The Data Pre-Processor)
+### 4. `benchmarking.py`
 Acts as the intermediate wrapper between the simulated physics and the algorithm.
 * Injects Gaussian noise into the clean PyPret trace.
 * Applies the user-defined background subtractions and dynamic boundaries.
